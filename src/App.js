@@ -1,23 +1,22 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Layout } from './components/hoc/Layout';
-import { AboutPage } from './pages/aboutPage/AboutPage';
-import { LoginPage } from './pages/loginPage/LoginPage';
-import { MainPage } from './pages/mainPage/MainPage';
-import { PortfolioPage } from './pages/portfolioPage/PortfolioPage';
-import { TodoPage } from './pages/todosPage/TodoPage';
+import { LayOut } from './components/LayOut';
+import { Photo } from './components/Photo';
+import {HomePage, AboutPage, ContactPage, NewsPage, PhotosPage, NotFoundPage} from './pages'
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<MainPage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="portfolio" element={<PortfolioPage />} />
-          <Route path="todos" element={<TodoPage />} />
+        <Route path='/' element={<LayOut />}>
+          <Route index element={<HomePage />} />
+          <Route path='about' element={<AboutPage />}/>
+          <Route path='contacts' element={<ContactPage />}/>
+          <Route path='news' element={<NewsPage />}/>
+          <Route path='photos' element={<PhotosPage />}/>
         </Route>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path='photos/:id' element={<Photo />}/>
+        <Route path='*' element={<NotFoundPage />}/>
       </Routes>
     </>
   );
