@@ -1,9 +1,11 @@
-export const countPlus = () => ({
-    type: 'COUNT_PLUS'
+export const addNumber = (number) => ({
+    type: 'ADD_NUMBER',
+    payload: number
 })
-export const countMinus = () => ({
-    type: 'COUNT_MINUS'
+export const changeNumber = (number) => ({
+    type: 'CHANGE_NUMBER',
+    payload: number
 })
-export const disabledState =() => ({
-    type: 'DISABLED_STATE'
+export const clearState = () => ({
+    type: 'CLEAR_STATE'
 })

@@ -1,9 +1,9 @@
 import React from 'react';
-import Counter from './components/Counter';
+import { Number } from './components/Number';
 function App() {
   return (
     <>
-      <Counter />
+      <Number />
     </>
   );
 }
