@@ -1,9 +1,10 @@
 import React from 'react';
-import { Number } from './components/Number';
+import { Form } from './components/Form';
+
 function App() {
   return (
     <>
-      <Number />
+      <Form />
     </>
   );
 }
