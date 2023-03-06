@@ -1,10 +1,8 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import { reducer } from "./reducers";
+import { configureStore } from "@reduxjs/toolkit";
+import calculatorReducer from "./slices/calculator-slice";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-export const store = createStore(
-    reducer,
-    composeEnhancers(applyMiddleware(thunk))
-)
+export const store = configureStore({
+    reducer: {
+        calculator: calculatorReducer
+    }
+})
