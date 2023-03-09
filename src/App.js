@@ -1,10 +1,17 @@
 import React from 'react';
-import { Calculator } from './components/Calculator';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { PhotoPage } from './pages/PhotoPage';
 
 function App() {
   return (
     <>
-      <Calculator />
+      <Routes>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='/:id' element={<PhotoPage />}/>
+        <Route path='*' element={<NotFoundPage />}/>
+      </Routes>
     </>
   );
 }
